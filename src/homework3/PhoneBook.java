@@ -5,9 +5,9 @@ import java.sql.SQLOutput;
 import java.util.ArrayList;
 
 public class PhoneBook {
-    private ArrayList <PhoneBookRecord> phoneBook;
+    private ArrayList<PhoneBookRecord> phoneBook;
 
-    public PhoneBook () {
+    public PhoneBook() {
         this.phoneBook = new ArrayList<>();
         phoneBook.add(new PhoneBookRecord("Иванов", 79062820023L));
         phoneBook.add(new PhoneBookRecord("Петров", 79264822582L));
@@ -23,12 +23,14 @@ public class PhoneBook {
         phoneBook.add(new PhoneBookRecord("Коровин", 79162531532L));
         phoneBook.add(new PhoneBookRecord("Соколов", 79253115132L));
     }
-    public void add(String surname, long phoneNumber){
+
+    public void add(String surname, long phoneNumber) {
         phoneBook.add(new PhoneBookRecord(surname, phoneNumber));
     }
-    public void get(String surname){
+
+    public void get(String surname) {
         for (PhoneBookRecord record : phoneBook) {
-            if (record.getSurname().equalsIgnoreCase(surname)){
+            if (record.getSurname().equalsIgnoreCase(surname)) {
                 System.out.println(record.getSurname() + " " + record.getPhoneNumber());
             }
         }
