@@ -1,6 +1,7 @@
 package homework3;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class PhoneBook {
     private ArrayList<PhoneBookRecord> phoneBook;
@@ -26,12 +27,14 @@ public class PhoneBook {
         phoneBook.add(new PhoneBookRecord(surname, phoneNumber));
     }
 
-    public void get(String surname) {
+    public List<Long> get(String surname) {
+        List<Long> list = new ArrayList<>();
         for (PhoneBookRecord record : phoneBook) {
             if (record.getSurname().equalsIgnoreCase(surname)) {
-                System.out.println(record.getSurname() + " " + record.getPhoneNumber());
+                list.add(record.getPhoneNumber());
             }
         }
+        return list;
     }
 }
 
