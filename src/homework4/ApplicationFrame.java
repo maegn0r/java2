@@ -5,6 +5,8 @@ import java.awt.*;
 import java.awt.event.*;
 
 public class ApplicationFrame {
+
+    private static final int EXIT_CODE = 99;
     private JFrame mainFrame;
     private JButton sendBtn;
     private TextArea mainTextArea;
@@ -80,7 +82,6 @@ public class ApplicationFrame {
         });
     }
 
-
     private JMenuBar getJMenuBar() {
         JMenuBar jMenuBar = new JMenuBar();
         jMenuBar.add(getFileJMenu());
@@ -95,6 +96,7 @@ public class ApplicationFrame {
         JMenuItem closeMenuItem = new JMenuItem("Close");
         jMenu.add(openMenuItem);
         jMenu.add(closeMenuItem);
+        closeMenuItem.addActionListener(e -> System.exit(EXIT_CODE));
 
         return jMenu;
     }
