@@ -1,5 +1,7 @@
 package homework5;
 
+import java.util.Arrays;
+
 public class TestClass {
 
     static final int size = 10000000;
@@ -13,10 +15,8 @@ public class TestClass {
     public static void createLongArr(int size) {
 
         float[] longArr = new float[size];
-        for (int i = 0; i < longArr.length; i++) {
-            longArr[i] = 1;
+        Arrays.fill(longArr, 1);
 
-        }
         long startTimeMeasurement = System.currentTimeMillis();
         for (int i = 0; i < longArr.length; i++) {
             longArr[i] = (float) (longArr[i] * Math.sin(0.2f + i / 5) * Math.cos(0.2f + i / 5) * Math.cos(0.4f + i / 2));
@@ -30,9 +30,7 @@ public class TestClass {
         float[] secondHalfOfLongArr = new float[h];
 
         float[] longArr = new float[size];
-        for (int i = 0; i < longArr.length; i++) {
-            longArr[i] = 1;
-        }
+        Arrays.fill(longArr, 1);
 
         long startTimeMeasurement = System.currentTimeMillis();
 
